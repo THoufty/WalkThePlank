@@ -37,7 +37,7 @@ Code Utilizations:
 
 - Calls pirate translator API (JS)
 
-- Uses timer for round countdown (insert clock emoji same as wrong letter)
+- Uses timer for round countdown (insert clock emoji same as wrong letter)⏰
    04-01-09 & 10
 
 - Uses local storage for wins/losses
@@ -46,7 +46,7 @@ Code Utilizations:
 - Uses JS to move pirate sprite along the plank
    04-01-20??
 
-- Uses pop-up modal for "play again?" screen
+- Uses pop-up modal for "play again?" screen [Tom]
 
 - Keyboard events for letter selection
    04-01-16   
