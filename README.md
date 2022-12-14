@@ -9,7 +9,7 @@ must NOT use alerts, confirms, or prompts (look into modals).
 must be deployed to GitHub Pages
 must be interavtice (i.e: accept and respond to user input)
 
-Group: Bayan, Trace, Austin
+Group: Bayan, Trace, Austin, Tom
 
 
 Project Type: Game
@@ -17,9 +17,9 @@ Game Type: Hangman
 Game Brand: Pirates
 Game Name: Walk The Plank
 Code Utilizations:
-> Calls pirate generator API
-> Calls pirate translator API
-> Uses timer for round countdown
-> Uses local storage for wins/losses???
-> Uses JS to move pirate sprite along the plank
-> Uses pop-up modal for "play again?" screen
+- Calls pirate generator API
+- Calls pirate translator API
+- Uses timer for round countdown
+- Uses local storage for wins/losses???
+- Uses JS to move pirate sprite along the plank
+- Uses pop-up modal for "play again?" screen
