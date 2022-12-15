@@ -17,7 +17,7 @@ Group: Bayan, Trace, Austin, Tom
 Scallywags
 
 Tom's #: 614-580-9451
-
+Tom's Email: Thomasjhouf@gmail.com
 
 Project Type: Game
 Game Type: Hangman
