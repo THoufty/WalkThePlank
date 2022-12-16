@@ -24,18 +24,18 @@ Game Type: Hangman
 Game Brand: Pirates
 Game Name: Walk The Plank
 Code Utilizations:
-- HTML & CSS need coded  [Bayan & Trace]
+- HTML & CSS need coded  [Bayan][Trace]
    API links needed (HTML)
    positions for pirate on plank needed in multiple CSS boxes under different HTML tags. (CSS)
    boxes for wrong letters and ⏰. (CSS)
    info button for instructions. (CSS)
 
-- clickable information button for instructions
+- clickable information button for instructions [Tom]
    modal with instructions for how to play
 
-- Calls pirate generator API (JS)
+- Calls pirate generator API (JS) [Austin]
 
-- Calls pirate translator API (JS)
+- Calls pirate translator API (JS) [Austin]
 
 - Uses timer for round countdown (insert clock emoji same as wrong letter)⏰
    04-01-09 & 10
