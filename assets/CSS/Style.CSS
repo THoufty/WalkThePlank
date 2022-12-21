@@ -62,7 +62,7 @@ body .infoClose {
 .infoTop {
     color: var(--brown);
     float: center;
-    font-family: 'comic sans MS','Courier New', Courier, monospace;
+    font-family:'Courier New', Courier, monospace;
     font-size: 25px;
     font-weight: bolder;
 }
@@ -70,7 +70,7 @@ body .infoClose {
 .infoBody {
     color: var(--brown);
     float: left;
-    font-family: 'comic sans MS', 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     font-weight: bolder;
 
