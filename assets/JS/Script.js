@@ -14,8 +14,8 @@ function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left until loss of turn.";
+})
 }
-
 setTime();
 
 
