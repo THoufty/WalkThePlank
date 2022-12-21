@@ -1,5 +1,5 @@
 :root {
---brown: rgb(122, 72, 8);
+--brown: rgb(179, 109, 17);
 --black: rgb(0, 0, 0);
 }
 
@@ -34,7 +34,7 @@ body {
 
 /* Modal Content */
 .infoModal-content {
-    background-color: #0324c5;
+    background-color: #374fc3;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -69,6 +69,6 @@ body .infoClose {
     float: left;
     font-family: 'comic sans MS', 'Courier New', Courier, monospace;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: bolder;
 
 }
