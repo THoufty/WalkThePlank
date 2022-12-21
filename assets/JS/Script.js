@@ -37,3 +37,4 @@ btn.onclick = function() {
 span.onclick = function() {
   infoModal.style.display = "none";
 }
+
