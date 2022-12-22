@@ -18,23 +18,48 @@ function setTime() {
 }
 setTime();
 
+////
+//// Game Information Modal
+////
 
 // Get the modal
-var modal = document.getElementById("playAgainModal");
+var infoModal = document.getElementById("infoModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("Button");
+var infoBtn = document.getElementById("infoButton");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("infoClose")[0];
+var infoSpan = document.getElementsByClassName("infoClose")[0];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+infoBtn.onclick = function() {
   infoModal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+// When the user clicks on <span>, close the modal
+infoSpan.onclick = function() {
   infoModal.style.display = "none";
 }
 
+///////
+/////// Play Again Modal
+///////
+
+// Get the modal
+var PAModal = document.getElementById("PAModal");
+
+// Get the button that opens the modal
+var PABtn = document.getElementById("PAButton");
+
+// Get the <span> element that closes the modal
+var PASpan = document.getElementsByClassName("PAClose")[0];
+
+// When triggered, open the modal 
+PABtn.onclick = function() {
+  PAModal.style.display = "block";
+}
+
+// When the user clicks on <span>, close the modal
+PASpan.onclick = function() {
+  PAModal.style.display = "none";
+}
