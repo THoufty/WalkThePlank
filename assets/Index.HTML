@@ -13,20 +13,42 @@
 
 <body>
 
-    <h2>Modal Example</h2>
-
     <!-- Trigger/Open The Modal -->
-    <button id="Button">This will be a </button>
+
+    <button id="infoButton"><img src="./images/info circle.png"></button>
 
     <!-- The Modal -->
-    <div id="playAgainModal" class="playAgainModal">
+    <div id="infoModal" class="infoModal">
 
         <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">Cancel</span>
-            <span class="close2">Play Again</span>
-            <p><img src="./images/clickable picture for pirates.png" alt="A sad face with exes for eyes"></p>
-            <p>blah blah blah blah blah lets play all the games and have all the fun</p>
+        <div class="infoModal-content">
+            <span class="infoTop">How To Play</span>
+            <div class="infoBody"> 
+                <p>	💀To play the game you will need to guess the words on screen one letter at a time!</p>
+                <p>	💀When you guess a letter correctly, it will appear in one or more of the blank spaces!</p>
+                <p>	💀When you guess a letter incorrectly, it will apear in the side of the ship as a missed letter!</p>
+            </div>
+            <span class="infoClose"> Back to Game</span> 
+        </div>
+
+    </div>
+    
+    <!-- Trigger/Open The Modal -->
+
+    <button id="PAButton">Loss Modal Trigger</button>
+
+
+    <!-- The Modal -->
+    <div id="PAModal" class="PAModal">
+
+        <!-- Modal content -->
+        <div class="PAModal-content">
+            <span class="PATop">AAARRRRGH!</span>
+            <div class="PABody"> 
+             <p>💀YOU LOST💀</p>
+            </div>
+            <span class="PAClose">Play Again?</span>
+            <span class="PAClose2">Go Back</span>
         </div>
         <div class="genb">
             <button class="btn btn-primary" id="fetch-button">

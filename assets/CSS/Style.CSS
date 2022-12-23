@@ -1,64 +1,137 @@
+:root {
+    --brown: rgb(179, 109, 17);
+    --black: rgb(0, 0, 0);
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* The Modal (background) */
-.playAgainModal {
+/* Info Modal background */
+.infoModal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
+    background-color: var(--black);
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
 }
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
+/*Info Button */
+#infoButton {
+    float: right;
+}
+
+/* Info Modal Content */
+.infoModal-content {
+    background-color: #374fc3;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 15%;
 }
 
-/* The Close Button */
-.close {
-    color: #000000;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.infoTop {
+    color: var(--brown);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
 }
 
-.close2 {
-    color: #000000;
-    float: left;
-    font-size: 28px;
-    font-weight: bold;
+.infoBody {
+    color: var(--brown);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bolder;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
+/* The "Back to Game" Button */
+body .infoClose {
+    color: var(--black);
+    float: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.infoClose:hover,
+.infoClose:focus {
+    color: var(--black);
     text-decoration: none;
     cursor: pointer;
 }
-.close2:hover,
-.close2:focus {
-    color: #000;
+
+/* The Play Again Modal (background) */
+.PAModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--black);
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Play Again Modal Content */
+.PAModal-content {
+    background-color: #374fc3;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 15%;
+}
+
+.PATop {
+    color: var(--brown);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+}
+
+.PABody {
+    color: var(--brown);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+/* The Close Button */
+body .PAClose {
+    float: left;
+    color: var(--black);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+.PAClose:hover,
+.PAClose:focus {
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body .PAClose2 {
+    float: right;
+    color: var(--black);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+.PAClose2:hover,
+.PAClose2:focus {
+    color: var(--black);
     text-decoration: none;
     cursor: pointer;
 }
