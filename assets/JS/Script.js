@@ -1,5 +1,13 @@
-// JS file
-// git push -u origin feature/apis
+var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
+
+fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log('Fetch Response \n-------------');
+    console.log(data);
+  });
 
 //timer
 var timeEl = document.querySelector(".time");
