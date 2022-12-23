@@ -1,39 +1,42 @@
-// JS file
-// git push -u origin feature/apis
+var pirateTerms = [
+  "ahoy",
+  "first mate",
+  "land ho",
+  "shipwreck",
+  "treasure",
+  "scalawag",
+  "scurvy",
+  "capsize",
+  "hijack",
+  "jolly roger",
+  "munity",
+  "plunder",
+  "blimey",
+  "heave ho",
+  "shark bait",
+  "hornswaggle",
+  "sea legs",
+  "bilge",
+  "poop deck",
+  "seadog",
+]
 
-//timer
-var timeEl = document.querySelector(".time");
+function randomWord() {
+  answer = pirateTerms[Math.floor(Math.random() * pirateTerms.length)]
 
-// Selects element by id
-var mainEl = document.getElementById("main");
-
-var secondsLeft = 15;
-
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left until loss of turn.";
+  alert(answer);
 }
 
-setTime();
+randomWord();
 
+var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
 
-// Get the modal
-var modal = document.getElementById("playAgainModal");
+fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log('Fetch Response \n-------------');
+    console.log(data);
+  });
 
-// Get the button that opens the modal
-var btn = document.getElementById("Button");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
