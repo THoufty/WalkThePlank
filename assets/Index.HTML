@@ -8,10 +8,25 @@
     <title>Walk The Plank</title>
     <link rel="stylesheet" href="./CSS/Style.CSS" />
     <Content-type: application/json; charset=utf-8>
-    </Content-type:>
 </head>
 
 <body>
+
+    <h1>WALK THE PLANK</h1>
+    
+    <div>
+        <div id="pirate1"><img src="" alt="A little pirate man"></div>
+        <div id="pirate2"><img src="" alt="A little pirate man"></div>
+        <div id="pirate3"><img src="" alt="A little pirate man"></div>
+        <div id="pirate4"><img src="" alt="A little pirate man"></div>
+        <div id="pirate5"><img src="" alt="A little pirate man"></div>
+        <div id="pirate6"><img src="" alt="A little pirate man"></div>
+        <div id="pirate7"><img src="" alt="A little pirate man"></div>
+        <div id="pirateLoss"><img src="" alt="A little pirate man"></div>
+    </div>
+
+
+
 
     <!-- Trigger/Open The Modal -->
 
@@ -23,16 +38,16 @@
         <!-- Modal content -->
         <div class="infoModal-content">
             <span class="infoTop">How To Play</span>
-            <div class="infoBody"> 
-                <p>	💀To play the game you will need to guess the words on screen one letter at a time!</p>
-                <p>	💀When you guess a letter correctly, it will appear in one or more of the blank spaces!</p>
-                <p>	💀When you guess a letter incorrectly, it will apear in the side of the ship as a missed letter!</p>
+            <div class="infoBody">
+                <p> 💀To play the game you will need to guess the words on screen one letter at a time!</p>
+                <p> 💀When you guess a letter correctly, it will appear in one or more of the blank spaces!</p>
+                <p> 💀When you guess a letter incorrectly, it will apear in the side of the ship as a missed letter!</p>
             </div>
-            <span class="infoClose"> Back to Game</span> 
+            <span class="infoClose"> Back to Game</span>
         </div>
 
     </div>
-    
+
     <!-- Trigger/Open The Modal -->
 
     <button id="PAButton">Loss Modal Trigger</button>
@@ -44,19 +59,22 @@
         <!-- Modal content -->
         <div class="PAModal-content">
             <span class="PATop">AAARRRRGH!</span>
-            <div class="PABody"> 
-             <p>💀YOU LOST💀</p>
+            <span></span>
+            <div class="PABody">
+                <p>💀YOU LOST💀</p>
             </div>
             <span class="PAClose">Play Again?</span>
             <span class="PAClose2">Go Back</span>
         </div>
-        <div class="genb">
-            <button class="btn btn-primary" id="fetch-button">
-              Fetch Insult
-            </button>
-          </div>
-
+        
     </div>
+        
+    <div class="genb">
+        <button id="fetch-button">
+            Start Game
+        </button>
+    </div>
+
     <script src="./JS/Script.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
 :root {
-    --brown: rgb(179, 109, 17);
+    --brown: rgb(143, 86, 12);
     --black: rgb(0, 0, 0);
 }
 
@@ -34,7 +34,7 @@ body {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 15%;
+    width: 20%;
 }
 
 .infoTop {
@@ -87,8 +87,8 @@ body .infoClose {
     background-color: #374fc3;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 15%;
+    border: 20px solid var(--brown);
+    width: 25%;
 }
 
 .PATop {

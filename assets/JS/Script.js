@@ -1,30 +1,38 @@
 var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
+var fetched = ''
+
 
 fetch(requestUrl)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log('Fetch Response \n-------------');
-    console.log(data);
+  fetched = data.contents.names
+  console.log(data.contents.names)
+
+  // whatever is going to be using this needs to be called from in here
+  // use "fetched"
+
   });
 
-//timer
-var timeEl = document.querySelector(".time");
 
-// Selects element by id
-var mainEl = document.getElementById("main");
 
-var secondsLeft = 15;
+// //timer
+// var timeEl = document.querySelector(".time");
 
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left until loss of turn.";
-})
-}
-setTime();
+// // Selects element by id
+// var mainEl = document.getElementById("main");
+
+// var secondsLeft = 15;
+
+// function setTime() {
+//   // Sets interval in variable
+//   var timerInterval = setInterval(function() {
+//     secondsLeft--;
+//     timeEl.textContent = secondsLeft + " seconds left until loss of turn.";
+// })
+// }
+// setTime();
 
 ////
 //// Game Information Modal
