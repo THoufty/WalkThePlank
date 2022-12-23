@@ -1,13 +1,20 @@
 var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
+
+var fetched = ''
 var timeEl = document.getElementById("time")
+
 
 fetch(requestUrl)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log('Fetch Response \n-------------');
-    console.log(data);
+  fetched = data.contents.names
+  console.log(data.contents.names)
+
+  // whatever is going to be using this needs to be called from in here
+  // use "fetched"
+
   });
 
   var startGame = document.getElementById("fetch-button");
