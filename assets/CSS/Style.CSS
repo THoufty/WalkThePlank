@@ -1,3 +1,5 @@
+/* Z axis makes things more important on the page. higher number meand closer to you. */
+
 :root {
     --brown: rgb(143, 86, 12);
     --black: rgb(0, 0, 0);
@@ -7,11 +9,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/*hidden and visible CSS for pirate sprite*/
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
 /* Info Modal background */
 .infoModal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
     padding-top: 100px;
     left: 0;
     top: 0;

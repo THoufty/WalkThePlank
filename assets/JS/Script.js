@@ -80,3 +80,53 @@ PABtn.onclick = function() {
 PASpan.onclick = function() {
   PAModal.style.display = "none";
 }
+
+////////
+//////// Sweeping the Sprite
+////////
+// var sprites = document.getElementsByClassName("sprite")
+// var spritesarr = Array.from(sprites)
+//  spritesarr.forEach(sweepSprite)
+
+// function sweepSprite() {
+//   var turnsLeft = 1
+    
+//     if ( turnsLeft == 1 ) {
+//       Element.classList.add("visible")
+//       Element.classList.remove("hidden")
+//     }
+//     else {
+//       Element.classList.add("hidden")
+//       Element.classList.remove("visible")
+//     }
+//   }
+
+  var usefulBtn = document.getElementById("usefulButton")
+
+// When triggered, change turnsLeft to 1
+usefulBtn.onclick = function() {
+  if (turnsLeft == 1) {
+    turnsLeft = 0
+  }
+  else if (turnsLeft == 0) {
+    turnsLeft = 1
+  }
+}
+
+function sweepSprite() {
+  var turnsLeft =1
+
+  $(".sprite").each(function () {
+  
+
+    if (turnsLeft == 1) {
+      $(this).removeClass("hidden")
+      $(this).addClass("visible")
+     }
+    else if (turnsLeft != 1) {
+      $(this).addClass("hidden")
+      $(this).removeClass("visible")
+    }
+    }
+  )
+}
