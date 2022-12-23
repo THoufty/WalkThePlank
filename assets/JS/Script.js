@@ -52,7 +52,7 @@ var PAModal = document.getElementById("PAModal");
 var PABtn = document.getElementById("PAButton");
 
 // Get the <span> element that closes the modal
-var PASpan = document.getElementsByClassName("PAClose")[0];
+var PASpan = document.getElementsByClassName("PAClose2")[0];
 
 // When triggered, open the modal 
 PABtn.onclick = function() {
