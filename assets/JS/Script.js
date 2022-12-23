@@ -1,4 +1,5 @@
 var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
+var timeEl = document.getElementById("time")
 
 fetch(requestUrl)
   .then(function (response) {
@@ -9,22 +10,23 @@ fetch(requestUrl)
     console.log(data);
   });
 
-//timer
-var timeEl = document.querySelector(".time");
+  var startGame = document.getElementById("fetch-button");
 
-// Selects element by id
-var mainEl = document.getElementById("main");
-
-var secondsLeft = 15;
-
-function setTime() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left until loss of turn.";
-})
-}
-setTime();
+  startGame.addEventListener('click', function() {
+      // Sets interval in variable
+      var secondsLeft = 15
+      var timerInterval = setInterval(function() {
+      
+        secondsLeft--;
+        timeEl.textContent = secondsLeft + " seconds left until loss of turn.";
+    
+        if(secondsLeft === 0) {
+          // Stops execution of action at set interval
+          clearInterval(timerInterval);}
+      
+      }, 1000);
+    })
+    
 
 ////
 //// Game Information Modal
