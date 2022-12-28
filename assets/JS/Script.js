@@ -101,7 +101,9 @@ PASpan.onclick = function() {
 //     }
 //   }
 
+
   var usefulBtn = document.getElementById("usefulButton")
+  var turnsLeft = 1
 
 // When triggered, change turnsLeft to 1
 usefulBtn.onclick = function() {
@@ -114,7 +116,7 @@ usefulBtn.onclick = function() {
 }
 
 function sweepSprite() {
-  var turnsLeft =1
+
 
   $(".sprite").each(function () {
   
@@ -130,3 +132,19 @@ function sweepSprite() {
     }
   )
 }
+
+function generateButtons() {
+  let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+    `
+      <button
+        class="btn btn-lg btn-primary m-2"
+        id='` + letter + `'
+        onClick="handleGuess('` + letter + `')"
+      >
+        ` + letter + `
+      </button>
+    `).join('');
+  document.getElementById('keyboard').innerHTML = buttonsHTML;
+}
+
+generateButtons();
