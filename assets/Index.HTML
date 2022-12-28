@@ -14,15 +14,17 @@
     <h1>WALK THE PLANK</h1>
 
     <div>
-        <div id="pirate1" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man"></div>
+        <div id="pirate1" class="sprite visible"><img src="./images/pirate on plank.png" alt="A little pirate man">
+        </div>
         <div id="pirate2" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man"></div>
         <div id="pirate3" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man"></div>
         <div id="pirate4" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man"></div>
         <div id="pirate5" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirate6" class="sprite visible"><img src="./images/pirate on plank.png" alt="A little pirate man">
+        <div id="pirate6" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man">
         </div>
         <div id="pirate7" class="sprite hidden"><img src="./images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirateLoss" class="sprite visible"><img src="./images/splat.png" alt="A little pirate man"></div>
+        <div id="pirateLoss" class="sprite hidden"><img src="./images/splat.png" alt="A little pirate man"></div>
+        <div id="pirateWin" class="sprite hidden"><img src="./images/evil pirate.png" alt="A little pirate man"></div>
     </div>
 
 
@@ -50,9 +52,8 @@
 
     <!-- Trigger/Open The Modal -->
 
-    <button id="PAButton">Loss Modal Trigger</button>
     <button id="UsefulButton">UsefulButton</button>
-    <!-- <div id="turnsLeft">1</div> -->
+    <div id="turnsLeftCounter"></div>
 
 
     <!-- The Modal -->
@@ -76,11 +77,9 @@
         </button>
         <div id="keyboard" class="keyboard"></div>
     </div>
-        <div id="time" style="text-align:center;">
-            <div id="main"></div>
-        </div>
+    <div id="time" style="text-align:center;">
+        <div id="main"></div>
     </div>
-    
 
 </body>
 <script src="./JS/Script.js"></script>
