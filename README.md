@@ -7,7 +7,7 @@ must have a polished UI ✅
 must meet good quality coding standards (indentaion, scoping, naming, etc.) [tom]
 must NOT use alerts, confirms, or prompts (look into modals). ✅
 must be deployed to GitHub Pages [tom]
-must be interavtice (i.e: accept and respond to user input) [all]
+must be interactive (i.e: accept and respond to user input) [all]
 
 We will use a random word or phrase generator API and bring that into a pirate translator api to bring in something to guess for Walk the Plank! The user will be prompted with instructions on how to play the game. A random word or phrase will be generated, and the user has to press a letter on their keyboard to make a guess. If the guess is correct, it will populate into the proper spot in the word/phrase. If the guess is incorrect, the unlucky pirate will step closer to the edge of the plank, and the incorrect letter will enter the wrong letter bank on the screen. If the user guesses correctly, the pirate will jump happily in place. If the user wins he's saved. If the user guesses incorrectly for all guesses, the pirate falls off the plank and splats onto the name WALK THE PLANK
 be recorded on the ship.
@@ -45,12 +45,12 @@ Code Utilizations:
 - Uses local storage for wins/losses
    04-01-(21-26)
 
-- Uses JS to move pirate sprite along the plank
+- Uses JS to move pirate sprite along the plank [tom]
    04-01-20??
 
 - Uses pop-up modal for "play again?" screen [Tom]
 
-- Keyboard events for letter selection
+- Keyboard events for letter selection [austin]
    04-01-16   
    04-01-20
 
@@ -58,3 +58,11 @@ Code Utilizations:
    wins/losses
    Fillable character spots
    keydown evens for choosing letters
+
+
+notes for ross help
+line 145 needs to call line 36 as if clocked and close modal
+
+line 139 needs to close modal
+
+keydown needs to trigger a click as if clicking the useful button
