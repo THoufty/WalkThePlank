@@ -4,17 +4,17 @@ var usefulBtn = document.getElementById("UsefulButton")
 var turnsLeft = 1
 var fetched = ''
 var timeEl = document.getElementById("time")
-// Get the modal
+// Get the info modal
 var infoModal = document.getElementById("infoModal");
-// Get the button that opens the modal
+// Get the button that opens the info modal
 var infoBtn = document.getElementById("infoButton");
-// Get the <span> element that closes the modal
+// Get the <span> element that closes the info modal
 var infoSpan = document.getElementsByClassName("infoClose")[0];
-// Get the modal
+// Get the play again modal
 var PAModal = document.getElementById("PAModal");
-// Get the button that opens the modal
+// Get the button that opens the play again modal
 var PABtn = document.getElementById("PAButton");
-// Get the <span> element that closes the modal
+// Get the <span> element that closes the play again modal
 var PASpan = document.getElementsByClassName("PAClose2")[0];
 
 fetch(requestUrl)
@@ -96,18 +96,14 @@ PASpan.onclick = function () {
 
 // When triggered, change turnsLeft to 1
 
-usefulBtn.onclick = function () {
+usefulBtn.addEventListener('click', function () {
   if (turnsLeft == 1) {
     turnsLeft = 0;
   }
-  else if (turnsLeft !== 1) {
+  else if (turnsLeft != 1) {
     turnsLeft = 1;
   }
-}
-
-console.log(turnsLeft)
-
-function sweepSprite() {
+  console.log(turnsLeft)
 
   $(".sprite").each(function () {
 
@@ -119,9 +115,8 @@ function sweepSprite() {
       $(".sprite").addClass("hidden")
       $(".sprite").removeClass("visible")
     }
-  }
-  )
-}
+  })
+})
 
 function generateButtons() {
   let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
