@@ -34,9 +34,9 @@ var PAModal = document.getElementById("PAModal")
 // Get the button that opens the play again modal
 var PABtn = document.getElementById("PAButton")
 // Get the <span> element that closes the play again modal
-var PASpan2 = document.getElementById("PAClose2")
+var PASpanPlayAgain = document.getElementById("PAClose2")
 // Get the <span> element that closes the play again modal and restarts the game
-var PASpan = document.getElementById("PAClose")
+var PASpanGoBack = document.getElementById("PAClose")
 
 function init() {
   getWins();
@@ -78,6 +78,7 @@ function renderBlanks() {
 
 function gameStart() {
   //fetch wins/losses
+
   // Sets interval in variable
   turnsLeft = 7
   var secondsLeft = 15
@@ -173,15 +174,15 @@ function sweepSprite() {
 ///////
 
 // When the user clicks on <span>, close the modal
-PASpan.onclick = function () {
+PASpanGoBack.addEventListener('click', function () {
+  PAModal.style.display = "none"
+})
+// When the user clicks on <span>, close the modal and 'start game' is initiated
+PASpanPlayAgain.addEventListener('click', function () {
   PAModal.style.display = "none"
   gameStart()
-}
-// When the user clicks on <span>, close the modal and 'start game' is initiated
-PASpan2.onclick = function () {
-  PAModal.style.display = "none"
   // call the timer
-}
+})
 
 
 
@@ -207,6 +208,13 @@ usefulBtn.addEventListener('click', sweepSprite)
 
 
 
+function checkWin() {
+  // If the word equals the blankLetters array when converted to string, set isWin to true
+  if (fetched === blanks.join("")) {
+    // This value is used in the timer function to test if win condition is met
+    isWin = true;
+  }
+}
 
 
 document.addEventListener("keydown", function (event) {
@@ -219,6 +227,30 @@ document.addEventListener("keydown", function (event) {
     checkWin();
   }
 });
+
+// Tests if guessed letter is in word and renders it to the screen.
+function checkLetters(letter) {
+  var letterInWord = false;
+  for (var i = 0; i < amtBlanks; i++) {
+    if (fetched[i] === letter) {
+      letterInWord = true;
+    }
+  }
+  if (letterInWord) {
+    for (var j = 0; j < amtBlanks; j++) {
+      if (fetched[j] === letter) {
+        blanks[j] = letter;
+      }
+    }
+    wordBlank.textContent = blanks.join(" ");
+  }
+}
+
+// document.addEventListener('keydown', function () {
+//   checkLetters()
+//   if 
+// }
+// )
 
 // function checkLetters(){
 // if //correct
@@ -241,3 +273,4 @@ fetch(requestUrl)
     renderBlanks()
 
   });
+
