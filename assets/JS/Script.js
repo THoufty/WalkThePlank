@@ -6,7 +6,6 @@ var fetched = ''
 var blanks = [];
 var lettersForBlanks = [];
 var amtBlanks = 0
-var wholeName = ''
 var wordBlank = document.querySelector(".word-blanks");
 var pirateOne = document.querySelector('#pirate1')
 var pirateTwo = document.querySelector('#pirate2')
@@ -116,7 +115,7 @@ function getlosses() {
 
 function checkWin() {
   // If the word equals the blankLetters array when converted to string, set isWin to true
-  if (fetched === blanksLetters.join("")) {
+  if (fetched === blanks.join("")) {
     // This value is used in the timer function to test if win condition is met
     isWin = true;
   }
@@ -303,18 +302,18 @@ function checkLetters(letter) {
   // Tests if guessed letter is in word and renders it to the screen.
   function checkLetters(letter) {
     var letterInWord = false;
-    for (var i = 0; i < numBlanks; i++) {
-      if (chosenWord[i] === letter) {
+    for (var i = 0; i < amtBlanks; i++) {
+      if (fetched[i] === letter) {
         letterInWord = true;
       }
     }
     if (letterInWord) {
-      for (var j = 0; j < numBlanks; j++) {
-        if (chosenWord[j] === letter) {
-          blanksLetters[j] = letter;
+      for (var j = 0; j < amtBlanks; j++) {
+        if (fetched[j] === letter) {
+          blanks[j] = letter;
         }
       }
-      wordBlank.textContent = blanksLetters.join(" ");
+      wordBlank.textContent = blanks.join(" ");
     }
   }
 // if //correct
@@ -323,13 +322,14 @@ function checkLetters(letter) {
 //   sweepSprite()
 // }}
 
-
+var datas = ''
 fetch(requestUrl)
   .then(function (response) {
     return response.json()
   })
   .then(function (data) {
-    fetched = data.contents.names.join(' ')
+    datas = data.contents.names.join(' ')
+    fetched = datas.toLowerCase()
     console.log(data.contents.names)
 
     // whatever is going to be using this needs to be called from in here
