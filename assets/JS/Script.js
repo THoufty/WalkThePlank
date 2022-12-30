@@ -8,6 +8,15 @@ var lettersForBlanks = [];
 var amtBlanks = 0
 var chosenWord = ''
 var wordBlank = document.querySelector(".word-blanks");
+var pirateOne = document.querySelector('#pirate1')
+var pirateTwo = document.querySelector('#pirate2')
+var pirateThree = document.querySelector('#pirate3')
+var pirateFour = document.querySelector('#pirate4')
+var pirateFive = document.querySelector('#pirate5')
+var pirateSix = document.querySelector('#pirate6')
+var pirateSeven = document.querySelector('#pirate7')
+var pirateLoss = document.querySelector('#pirateLoss')
+var pirateWin = document.querySelector('#pirateWin')
 
 var timeEl = document.getElementById("time")
 // Get the info modal
@@ -15,157 +24,170 @@ var infoModal = document.getElementById("infoModal")
 // Get the button that opens the info modal
 var infoBtn = document.getElementById("infoButton")
 // Get the <span> element that closes the info modal
-var infoSpan = document.getElementsByClassName("infoClose")
+var infoSpan = document.querySelector(".infoClose")
 // Get the play again modal
 var PAModal = document.getElementById("PAModal")
 // Get the button that opens the play again modal
 var PABtn = document.getElementById("PAButton")
 // Get the <span> element that closes the play again modal
-var PASpan2 = document.getElementsByClassName("PAClose2")
+var PASpan2 = document.getElementById("PAClose2")
 // Get the <span> element that closes the play again modal and restarts the game
-var PASpan = document.getElementsByClassName("PAClose")
+var PASpan = document.getElementById("PAClose")
 
 
 
 function renderBlanks() {
   // Randomly picks word from words array
-  chosenWord = fetched[Math.floor(Math.random() * fetched.length)];
   lettersForBlanks = fetched.split("");
   amtBlanks = lettersForBlanks.length;
   blanks = []
   // Uses loop to push blanks to blankLetters array
   for (var i = 0; i < amtBlanks; i++) {
-    blanks.push("_");
+    if (lettersForBlanks[i] != " ") {
+      blanks.push("_")
+    }
+    else {
+      blanks.push(" ")
+    }
   }
   // Converts blankLetters array into a string and renders it on the screen
-  wordBlank.textContent = blanks.join(" ")
+  wordBlank.innerHTML = blanks.join("&nbsp;")
 }
-renderBlanks()
 
 function gameStart() {
+  //fetch wins/losses
   // Sets interval in variable
   turnsLeft = 7
   var secondsLeft = 15
   var timerInterval = setInterval(function () {
-    
+
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left until loss of turn."
-    
+
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval)
     }
-    
+
   }, 1000)
 }
 
 //Opens the PLay Again Modal if turnsLeft turns to 0
 function loseGame() {
-if (turnsLeft == 0) {
-  PAModal.style.display = "block"
-}}
+  if (turnsLeft == 0) {
+    PAModal.style.display = "block"
+  }
+}
 
 //sweeps the sprite html and changes sprite location based on turnsLeft value and countdowns turnsLeft value
-function sweepSprite() {
+function countDown() {
   if (turnsLeft > 0) {
     turnsLeft--;
     console.log(turnsLeft)
   }
-  
-  $(".sprite").each(function () {
-    
-    if (turnsLeft == 7) {
-      $("#pirate1").removeClass("hidden")
-      $("#pirate1").addClass("visible")
-    }
-    else if (turnsLeft == 6) {
-      $("#pirate1").addClass("hidden")
-      $("#pirate1").removeClass("visible")
-      $("#pirate2").removeClass("hidden")
-      $("#pirate2").addClass("visible")
-    }
-    else if (turnsLeft == 5) {
-      $("#pirate2").addClass("hidden")
-      $("#pirate2").removeClass("visible")
-      $("#pirate3").removeClass("hidden")
-      $("#pirate3").addClass("visible")
-    }
-    else if (turnsLeft == 4) {
-      $("#pirate3").addClass("hidden")
-      $("#pirate3").removeClass("visible")
-      $("#pirate4").removeClass("hidden")
-      $("#pirate4").addClass("visible")
-    }
-    else if (turnsLeft == 3) {
-      $("#pirate4").addClass("hidden")
-      $("#pirate4").removeClass("visible")
-      $("#pirate5").removeClass("hidden")
-      $("#pirate5").addClass("visible")
-    }
-    else if (turnsLeft == 2) {
-      $("#pirate5").addClass("hidden")
-      $("#pirate5").removeClass("visible")
-      $("#pirate6").removeClass("hidden")
-      $("#pirate6").addClass("visible")
-    }
-    else if (turnsLeft == 1) {
-      $("#pirate6").addClass("hidden")
-      $("#pirate6").removeClass("visible")
-      $("#pirate7").removeClass("hidden")
-      $("#pirate7").addClass("visible")
-    }
-    else if (turnsLeft == 0) {
-      $("#pirate7").addClass("hidden")
-      $("#pirate7").removeClass("visible")
-      $("#pirateLoss").removeClass("hidden")
-      $("#pirateLoss").addClass("visible")
-    }
-    
-    var turnsLeftCounter = "Turns Left " + turnsLeft
-    document.getElementById('turnsLeftCounter').innerHTML = turnsLeftCounter
+}
 
-    loseGame()
-    
-    ///////
-    /////// Play Again Modal
-    ///////
-    
-    // When the user clicks on <span>, close the modal
-    // PASpan.onclick = function () {
-      //   PAModal.style.display = "none"
-      // }
-      // When the user clicks on <span>, close the modal and 'start game' is initiated
-      //     PASpan2.onclick = function () {
-        //       PAModal.style.display = "none"
-        // // call the timer
-        //     }
-        
-      })
-    }
-    
-    
+function sweepSprite() {
+  countDown()
+
+  if (turnsLeft == 7) {
+    pirateOne.classList.remove('hidden')
+    pirateOne.classList.add('visible')
+  }
+
+  else if (turnsLeft == 6) {
+    pirateOne.classList.add('hidden')
+    pirateOne.classList.remove('visible')
+    pirateTwo.classList.remove('hidden')
+    pirateTwo.classList.add('visible')
+  }
+  else if (turnsLeft == 5) {
+    pirateTwo.classList.add('hidden')
+    pirateTwo.classList.remove('visible')
+    pirateThree.classList.remove('hidden')
+    pirateThree.classList.add('visible')
+  }
+  else if (turnsLeft == 4) {
+    pirateThree.classList.add('hidden')
+    pirateThree.classList.remove('visible')
+    pirateFour.classList.remove('hidden')
+    pirateFour.classList.add('visible')
+  }
+  else if (turnsLeft == 3) {
+    pirateFour.classList.add('hidden')
+    pirateFour.classList.remove('visible')
+    pirateFive.classList.remove('hidden')
+    pirateFive.classList.add('visible')
+  }
+  else if (turnsLeft == 2) {
+    pirateFive.classList.add('hidden')
+    pirateFive.classList.remove('visible')
+    pirateSix.classList.remove('hidden')
+    pirateSix.classList.add('visible')
+  }
+  else if (turnsLeft == 1) {
+    pirateSix.classList.add('hidden')
+    pirateSix.classList.remove('visible')
+    pirateSeven.classList.remove('hidden')
+    pirateSeven.classList.add('visible')
+  }
+  else if (turnsLeft == 0) {
+    pirateSeven.classList.add('hidden')
+    pirateSeven.classList.remove('visible')
+    pirateLoss.classList.remove('hidden')
+    pirateLoss.classList.add('visible')
+  }
+
+  var turnsLeftCounter = "Turns Left " + turnsLeft
+  document.getElementById('turnsLeftCounter').innerHTML = turnsLeftCounter
+
+  loseGame()
+
+
+}
+
+///////
+/////// Play Again Modal
+///////
+
+// When the user clicks on <span>, close the modal
+PASpan.onclick = function () {
+  PAModal.style.display = "none"
+  gameStart()
+}
+// When the user clicks on <span>, close the modal and 'start game' is initiated
+PASpan2.onclick = function () {
+  PAModal.style.display = "none"
+  // call the timer
+}
+
+
 
 ////
 //// Game Information Modal
 ////
 
 // When the user clicks the button, open the modal 
-infoBtn.onclick = function () {
+infoBtn.addEventListener('click', function () {
   infoModal.style.display = "block"
-}
+})
 
 // When the user clicks on <span>, close the modal
-infoSpan.onclick = function () {
+infoSpan.addEventListener('click', function () {
   infoModal.style.display = "none"
-}
+})
 
-      //Click button to start a new game
-      startGame.addEventListener('click', gameStart)
+//Click button to start a new game
+startGame.addEventListener('click', gameStart)
 
-      // Useful button to simulate a keydown event
-      usefulBtn.addEventListener('click', sweepSprite)
+// Useful button to simulate a keydown event
+usefulBtn.addEventListener('click', sweepSprite)
 
-document.addEventListener("keydown", function(event) {
+
+
+
+
+document.addEventListener("keydown", function (event) {
   var key = event.key.toLowerCase();
   var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split("");
   // Test if key pushed is letter
@@ -176,15 +198,24 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
+// function checkLetters(){
+// if //correct
+// //add letter
+// else {
+//   sweepSprite()
+// }}
+
+
 fetch(requestUrl)
   .then(function (response) {
     return response.json()
   })
   .then(function (data) {
-    fetched = data.contents.names
+    fetched = data.contents.names.join(' ')
     console.log(data.contents.names)
 
     // whatever is going to be using this needs to be called from in here
     // use "fetched"
+    renderBlanks()
 
   });

@@ -118,7 +118,7 @@ body .infoClose {
 }
 
 /* The Close Button */
-body .PAClose {
+body #PAClose {
     float: left;
     color: var(--black);
     font-weight: bolder;
@@ -126,14 +126,14 @@ body .PAClose {
     font-size: 15px;
 }
 
-.PAClose:hover,
-.PAClose:focus {
+#PAClose:hover,
+#PAClose:focus {
     color: var(--black);
     text-decoration: none;
     cursor: pointer;
 }
 
-body .PAClose2 {
+body #PAClose2 {
     float: right;
     color: var(--black);
     font-weight: bolder;
@@ -141,8 +141,8 @@ body .PAClose2 {
     font-size: 15px;
 }
 
-.PAClose2:hover,
-.PAClose2:focus {
+#PAClose2:hover,
+#PAClose2:focus {
     color: var(--black);
     text-decoration: none;
     cursor: pointer;
