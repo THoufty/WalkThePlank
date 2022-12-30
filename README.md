@@ -25,7 +25,6 @@ Game Brand: Pirates
 Game Name: Walk The Plank
 Code Utilizations:
 - HTML & CSS need coded  [Bayan]
-   API links needed (JS)✅
    positions for pirate on plank needed in multiple CSS boxes under different HTML tags. (CSS)
    boxes for wrong letters and ⏰. (CSS)
    info button for instructions. (CSS)✅
@@ -36,6 +35,7 @@ Code Utilizations:
    modal with instructions for how to play ✅
 
 - Calls pirate generator API (JS) [Austin]✅
+   API links needed (JS)✅
 
 <!-- - Calls pirate translator API (JS) [Austin] -->
 
