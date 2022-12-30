@@ -258,14 +258,14 @@ function checkWin() {
   // If the word equals the blankLetters array when converted to string, set isWin to true
   if (fetched === blanks.join("")) {
     // This value is used in the timer function to test if win condition is met
-    isWin = true;
+    Winner = true;
   }
 }
 
 
 document.addEventListener("keydown", function (event) {
   var key = event.key.toLowerCase();
-  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split("");
+  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz- ".split("");
   // Test if key pushed is letter
   if (alphabetNumericCharacters.includes(key)) {
     var letterGuessed = event.key;
