@@ -95,7 +95,7 @@ function sweepSprite() {
     pirateOne.classList.add('visible')
   }
 
-  else if (turnsLeft == 6) {
+  else if (turnsLeft == 6) { 
     pirateOne.classList.add('hidden')
     pirateOne.classList.remove('visible')
     pirateTwo.classList.remove('hidden')
