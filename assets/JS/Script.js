@@ -3,6 +3,12 @@ var startGame = document.getElementById("fetch-button")
 var usefulBtn = document.getElementById("UsefulButton")
 var turnsLeft;
 var fetched = ''
+var blanks = [];
+var lettersForBlanks = [];
+var amtBlanks = 0
+var chosenWord = ''
+var wordBlank = document.querySelector(".word-blanks");
+
 var timeEl = document.getElementById("time")
 // Get the info modal
 var infoModal = document.getElementById("infoModal")
@@ -20,6 +26,21 @@ var PASpan2 = document.getElementsByClassName("PAClose2")
 var PASpan = document.getElementsByClassName("PAClose")
 
 
+
+function renderBlanks() {
+  // Randomly picks word from words array
+  chosenWord = fetched[Math.floor(Math.random() * fetched.length)];
+  lettersForBlanks = fetched.split("");
+  amtBlanks = lettersForBlanks.length;
+  blanks = []
+  // Uses loop to push blanks to blankLetters array
+  for (var i = 0; i < amtBlanks; i++) {
+    blanks.push("_");
+  }
+  // Converts blankLetters array into a string and renders it on the screen
+  wordBlank.textContent = blanks.join(" ")
+}
+renderBlanks()
 
 function gameStart() {
   // Sets interval in variable
@@ -138,39 +159,32 @@ infoSpan.onclick = function () {
   infoModal.style.display = "none"
 }
 
-    
-    // function generateButtons() {
-      //   let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-      //     `
-      //       <button
-      //         class="btn btn-lg btn-primary m-2"
-      //         id='` + letter + `'
-      //         onClick="handleGuess('` + letter + `')"
-      //         >
-      //         ` + letter + `
-      //         </button>
-      //     `).join('')
-      //   document.getElementById('keyboard').innerHTML = buttonsHTML
-      // }
-      
       //Click button to start a new game
       startGame.addEventListener('click', gameStart)
 
-
       // Useful button to simulate a keydown event
       usefulBtn.addEventListener('click', sweepSprite)
-      
-      
-      
-      fetch(requestUrl)
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        fetched = data.contents.names
-        console.log(data.contents.names)
-        
-        // whatever is going to be using this needs to be called from in here
-        // use "fetched"
-        
-      });
+
+document.addEventListener("keydown", function(event) {
+  var key = event.key.toLowerCase();
+  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split("");
+  // Test if key pushed is letter
+  if (alphabetNumericCharacters.includes(key)) {
+    var letterGuessed = event.key;
+    checkLetters(letterGuessed)
+    checkWin();
+  }
+});
+
+fetch(requestUrl)
+  .then(function (response) {
+    return response.json()
+  })
+  .then(function (data) {
+    fetched = data.contents.names
+    console.log(data.contents.names)
+
+    // whatever is going to be using this needs to be called from in here
+    // use "fetched"
+
+  });
