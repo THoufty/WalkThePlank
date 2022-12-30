@@ -37,6 +37,8 @@ var PABtn = document.getElementById("PAButton")
 var PASpanPlayAgain = document.getElementById("PAClose2")
 // Get the <span> element that closes the play again modal and restarts the game
 var PASpanGoBack = document.getElementById("PAClose")
+var datas = ''
+var timerInterval;
 
 function init() {
   getWins();
@@ -45,10 +47,11 @@ function init() {
 
 function gameStart() {
   //fetch wins/losses
-  // Sets interval in variable
+  startGame.disabled = true
   turnsLeft = 7
+  // Sets interval in variable
   var secondsLeft = 15
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
 
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left until loss of turn."
@@ -56,23 +59,24 @@ function gameStart() {
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval)
+      gameStart()
+      sweepSprite()
     }
 
   }, 1000)
 }
 
 function winGame() {
-  wordBlank.textContent = "YOU WON!!!🏆 ";
+  wordBlank.textContent = "YOU WON!!!🏆 "
   winTracker++
-  startButton.disabled = false;
+  startGame.disabled = false
   setWins()
 }
 
 // The loseGame function is called when timer reaches 0
 function loseGame() {
-  wordBlank.textContent = "GAME OVER";
   loseTracker++
-  startButton.disabled = false;
+  startGame.disabled = false;
   setLosses()
 }
 
@@ -117,7 +121,7 @@ function checkWin() {
   // If the word equals the blankLetters array when converted to string, set isWin to true
   if (fetched === blanks.join("")) {
     // This value is used in the timer function to test if win condition is met
-    isWin = true;
+    Winner = true;
   }
 }
 
@@ -136,7 +140,7 @@ function renderBlanks() {
     }
   }
   // Converts blankLetters array into a string and renders it on the screen
-  wordBlank.innerHTML = blanks.join("&nbsp;")
+  wordBlank.innerHTML = blanks.join(" ")
 }
 
 
@@ -209,11 +213,7 @@ function sweepSprite() {
   
   var turnsLeftCounter = "Turns Left " + turnsLeft
   document.getElementById('turnsLeftCounter').innerHTML = turnsLeftCounter
-  
-  loseGame()
-  
-  
-}
+  }
 
 ///////
 /////// Play Again Modal
@@ -229,8 +229,6 @@ PASpanPlayAgain.addEventListener('click', function () {
   gameStart()
   // call the timer
 })
-
-
 
 ////
 //// Game Information Modal
@@ -252,8 +250,6 @@ startGame.addEventListener('click', gameStart)
 // Useful button to simulate a keydown event
 usefulBtn.addEventListener('click', sweepSprite)
 
-
-
 function checkWin() {
   // If the word equals the blankLetters array when converted to string, set isWin to true
   if (fetched === blanks.join("")) {
@@ -261,7 +257,6 @@ function checkWin() {
     Winner = true;
   }
 }
-
 
 document.addEventListener("keydown", function (event) {
   var key = event.key.toLowerCase();
@@ -273,30 +268,6 @@ document.addEventListener("keydown", function (event) {
     checkWin();
   }
 });
-
-// Tests if guessed letter is in word and renders it to the screen.
-function checkLetters(letter) {
-  var letterInWord = false;
-  for (var i = 0; i < amtBlanks; i++) {
-    if (fetched[i] === letter) {
-      letterInWord = true;
-    }
-  }
-  if (letterInWord) {
-    for (var j = 0; j < amtBlanks; j++) {
-      if (fetched[j] === letter) {
-        blanks[j] = letter;
-      }
-    }
-    wordBlank.textContent = blanks.join(" ");
-  }
-}
-
-// document.addEventListener('keydown', function () {
-//   checkLetters()
-//   if 
-// }
-// )
 
 // function checkLetters(){
   // Tests if guessed letter is in word and renders it to the screen.
@@ -315,14 +286,12 @@ function checkLetters(letter) {
       }
       wordBlank.textContent = blanks.join(" ");
     }
+    if (letterInWord = false) {
+      sweepSprite()
+    }
   }
-// if //correct
-// //add letter
-// else {
-//   sweepSprite()
-// }}
+  
 
-var datas = ''
 fetch(requestUrl)
   .then(function (response) {
     return response.json()
