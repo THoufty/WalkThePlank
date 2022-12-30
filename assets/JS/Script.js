@@ -19,66 +19,40 @@ var PASpan2 = document.getElementsByClassName("PAClose2")
 // Get the <span> element that closes the play again modal and restarts the game
 var PASpan = document.getElementsByClassName("PAClose")
 
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json()
-  })
-  .then(function (data) {
-    fetched = data.contents.names
-    console.log(data.contents.names)
-
-    // whatever is going to be using this needs to be called from in here
-    // use "fetched"
-
-  });
 
 
-startGame.addEventListener('click', function () {
+function gameStart() {
   // Sets interval in variable
   turnsLeft = 7
   var secondsLeft = 15
   var timerInterval = setInterval(function () {
-
+    
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left until loss of turn."
-
+    
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval)
     }
-
+    
   }, 1000)
-})
-
-////
-//// Game Information Modal
-////
-
-// When the user clicks the button, open the modal 
-infoBtn.onclick = function () {
-  infoModal.style.display = "block"
 }
 
-// When the user clicks on <span>, close the modal
-infoSpan.onclick = function () {
-  infoModal.style.display = "none"
-}
+//Opens the PLay Again Modal if turnsLeft turns to 0
+function loseGame() {
+if (turnsLeft == 0) {
+  PAModal.style.display = "block"
+}}
 
-
-////////
-//////// Sweeping the Sprite
-////////
-
-// When triggered, change turnsLeft to 1
-
-usefulBtn.addEventListener('click', function () {
+//sweeps the sprite html and changes sprite location based on turnsLeft value and countdowns turnsLeft value
+function sweepSprite() {
   if (turnsLeft > 0) {
     turnsLeft--;
     console.log(turnsLeft)
   }
-
+  
   $(".sprite").each(function () {
-
+    
     if (turnsLeft == 7) {
       $("#pirate1").removeClass("hidden")
       $("#pirate1").addClass("visible")
@@ -125,44 +99,78 @@ usefulBtn.addEventListener('click', function () {
       $("#pirateLoss").removeClass("hidden")
       $("#pirateLoss").addClass("visible")
     }
-
+    
     var turnsLeftCounter = "Turns Left " + turnsLeft
     document.getElementById('turnsLeftCounter').innerHTML = turnsLeftCounter
 
+    loseGame()
+    
     ///////
     /////// Play Again Modal
     ///////
-
-    if (turnsLeft == 0) {
-      PAModal.style.display = "block"
-    }
-
+    
     // When the user clicks on <span>, close the modal
-    PASpan.onclick = function () {
-      PAModal.style.display = "none"
+    // PASpan.onclick = function () {
+      //   PAModal.style.display = "none"
+      // }
+      // When the user clicks on <span>, close the modal and 'start game' is initiated
+      //     PASpan2.onclick = function () {
+        //       PAModal.style.display = "none"
+        // // call the timer
+        //     }
+        
+      })
     }
-    // When the user clicks on <span>, close the modal and 'start game' is initiated
-    PASpan2.onclick = function () {
-      PAModal.style.display = "none"
-// call the timer
-    }
+    
+    
 
-  })
-})
+////
+//// Game Information Modal
+////
 
-
-function generateButtons() {
-  let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-    `
-      <button
-        class="btn btn-lg btn-primary m-2"
-        id='` + letter + `'
-        onClick="handleGuess('` + letter + `')"
-        >
-        ` + letter + `
-        </button>
-    `).join('')
-  document.getElementById('keyboard').innerHTML = buttonsHTML
+// When the user clicks the button, open the modal 
+infoBtn.onclick = function () {
+  infoModal.style.display = "block"
 }
 
-generateButtons()
+// When the user clicks on <span>, close the modal
+infoSpan.onclick = function () {
+  infoModal.style.display = "none"
+}
+
+    
+    // function generateButtons() {
+      //   let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+      //     `
+      //       <button
+      //         class="btn btn-lg btn-primary m-2"
+      //         id='` + letter + `'
+      //         onClick="handleGuess('` + letter + `')"
+      //         >
+      //         ` + letter + `
+      //         </button>
+      //     `).join('')
+      //   document.getElementById('keyboard').innerHTML = buttonsHTML
+      // }
+      
+      //Click button to start a new game
+      startGame.addEventListener('click', gameStart)
+
+
+      // Useful button to simulate a keydown event
+      usefulBtn.addEventListener('click', sweepSprite)
+      
+      
+      
+      fetch(requestUrl)
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        fetched = data.contents.names
+        console.log(data.contents.names)
+        
+        // whatever is going to be using this needs to be called from in here
+        // use "fetched"
+        
+      });
