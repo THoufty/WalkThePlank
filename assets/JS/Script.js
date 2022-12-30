@@ -303,13 +303,13 @@ function checkLetters(letter) {
   // Tests if guessed letter is in word and renders it to the screen.
   function checkLetters(letter) {
     var letterInWord = false;
-    for (var i = 0; i < numBlanks; i++) {
+    for (var i = 0; i < amtBlanks; i++) {
       if (chosenWord[i] === letter) {
         letterInWord = true;
       }
     }
     if (letterInWord) {
-      for (var j = 0; j < numBlanks; j++) {
+      for (var j = 0; j < amtBlanks; j++) {
         if (chosenWord[j] === letter) {
           blanksLetters[j] = letter;
         }
