@@ -148,27 +148,9 @@ body .PAClose2 {
     cursor: pointer;
 }
 
-#pirate1 {
-    padding-left: 20em;
-}
-#pirate2 {
-    padding-left: 19em;
-}
-#pirate3 {
-    padding-left: 18em;
-}
-#pirate4 {
-    padding-left: 17em;
-}
-#pirate5 {
-    padding-left: 16em;
-}
-#pirate6 {
-    padding-left: 15em;
-}
-#pirate7 {
-    padding-left: 14em;
-}
-#pirateLoss {
-    padding-left: 13em;
+
+.genb {
+   text-align: center;
+   
+    
 }
