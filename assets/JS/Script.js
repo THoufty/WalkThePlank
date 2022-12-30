@@ -17,6 +17,10 @@ var pirateSix = document.querySelector('#pirate6')
 var pirateSeven = document.querySelector('#pirate7')
 var pirateLoss = document.querySelector('#pirateLoss')
 var pirateWin = document.querySelector('#pirateWin')
+var lose = document.querySelector(".lose");
+var win = document.querySelector(".win");
+var winTracker= 0
+var loseTracker = 0
 
 var timeEl = document.getElementById("time")
 // Get the info modal
@@ -34,7 +38,25 @@ var PASpan2 = document.getElementById("PAClose2")
 // Get the <span> element that closes the play again modal and restarts the game
 var PASpan = document.getElementById("PAClose")
 
+function init() {
+  getWins();
+  getlosses();
+}
 
+function winGame() {
+  wordBlank.textContent = "YOU WON!!!🏆 ";
+  winTracker++
+  startButton.disabled = false;
+  setWins()
+}
+
+// The loseGame function is called when timer reaches 0
+function loseGame() {
+  wordBlank.textContent = "GAME OVER";
+  loseTracker++
+  startButton.disabled = false;
+  setLosses()
+}
 
 function renderBlanks() {
   // Randomly picks word from words array
