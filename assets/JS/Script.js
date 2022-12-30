@@ -6,7 +6,7 @@ var fetched = ''
 var blanks = [];
 var lettersForBlanks = [];
 var amtBlanks = 0
-var chosenWord = ''
+var wholeName = ''
 var wordBlank = document.querySelector(".word-blanks");
 var pirateOne = document.querySelector('#pirate1')
 var pirateTwo = document.querySelector('#pirate2')
@@ -21,6 +21,7 @@ var lose = document.querySelector(".lose");
 var win = document.querySelector(".win");
 var winTracker= 0
 var loseTracker = 0
+var Winner = false
 
 var timeEl = document.getElementById("time")
 // Get the info modal
@@ -43,6 +44,24 @@ function init() {
   getlosses();
 }
 
+function gameStart() {
+  //fetch wins/losses
+  // Sets interval in variable
+  turnsLeft = 7
+  var secondsLeft = 15
+  var timerInterval = setInterval(function () {
+
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left until loss of turn."
+
+    if (secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval)
+    }
+
+  }, 1000)
+}
+
 function winGame() {
   wordBlank.textContent = "YOU WON!!!🏆 ";
   winTracker++
@@ -56,6 +75,51 @@ function loseGame() {
   loseTracker++
   startButton.disabled = false;
   setLosses()
+}
+
+// Updates win count on screen and sets win count to client storage
+function setWins() {
+  win.textContent = winTracker;
+  localStorage.setItem("winTrack", winTracker);
+}
+
+// Updates lose count on screen and sets lose count to client storage
+function setLosses() {
+  lose.textContent = loseTracker;
+  localStorage.setItem("loseTrack", loseTracker);
+}
+
+// These functions are used by init
+function getWins() {
+  // Get stored value from client storage, if it exists
+  var storedWins = localStorage.getItem("winTrack");
+  // If stored value doesn't exist, set counter to 0
+  if (storedWins === null) {
+    winTracker = 0;
+  } else {
+    // If a value is retrieved from client storage set the winCounter to that value
+    winTracker = storedWins;
+  }
+  //Render win count to page
+  win.textContent = winTracker;
+}
+
+function getlosses() {
+  var storedLosses = localStorage.getItem("loseTrack");
+  if (storedLosses === null) {
+    loseCounter = 0;
+  } else {
+    loseTracker = storedLosses;
+  }
+  lose.textContent = loseTracker;
+}
+
+function checkWin() {
+  // If the word equals the blankLetters array when converted to string, set isWin to true
+  if (fetched === blanksLetters.join("")) {
+    // This value is used in the timer function to test if win condition is met
+    isWin = true;
+  }
 }
 
 function renderBlanks() {
@@ -76,23 +140,6 @@ function renderBlanks() {
   wordBlank.innerHTML = blanks.join("&nbsp;")
 }
 
-function gameStart() {
-  //fetch wins/losses
-  // Sets interval in variable
-  turnsLeft = 7
-  var secondsLeft = 15
-  var timerInterval = setInterval(function () {
-
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left until loss of turn."
-
-    if (secondsLeft === 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval)
-    }
-
-  }, 1000)
-}
 
 //Opens the PLay Again Modal if turnsLeft turns to 0
 function loseGame() {
@@ -111,12 +158,12 @@ function countDown() {
 
 function sweepSprite() {
   countDown()
-
+  
   if (turnsLeft == 7) {
     pirateOne.classList.remove('hidden')
     pirateOne.classList.add('visible')
   }
-
+  
   else if (turnsLeft == 6) {
     pirateOne.classList.add('hidden')
     pirateOne.classList.remove('visible')
@@ -159,13 +206,13 @@ function sweepSprite() {
     pirateLoss.classList.remove('hidden')
     pirateLoss.classList.add('visible')
   }
-
+  
   var turnsLeftCounter = "Turns Left " + turnsLeft
   document.getElementById('turnsLeftCounter').innerHTML = turnsLeftCounter
-
+  
   loseGame()
-
-
+  
+  
 }
 
 ///////
@@ -221,6 +268,23 @@ document.addEventListener("keydown", function (event) {
 });
 
 // function checkLetters(){
+  // Tests if guessed letter is in word and renders it to the screen.
+  function checkLetters(letter) {
+    var letterInWord = false;
+    for (var i = 0; i < numBlanks; i++) {
+      if (chosenWord[i] === letter) {
+        letterInWord = true;
+      }
+    }
+    if (letterInWord) {
+      for (var j = 0; j < numBlanks; j++) {
+        if (chosenWord[j] === letter) {
+          blanksLetters[j] = letter;
+        }
+      }
+      wordBlank.textContent = blanksLetters.join(" ");
+    }
+  }
 // if //correct
 // //add letter
 // else {
