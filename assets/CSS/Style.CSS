@@ -176,3 +176,72 @@ body #PAClose2 {
 .genb {
     text-align: center;
 }
+/* The Play Again Modal (background) */
+.winModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--black);
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Play Again Modal Content */
+.winModal-content {
+    background-color: #374fc3;
+    margin: auto;
+    padding: 20px;
+    border: 20px solid var(--brown);
+    width: 25%;
+}
+
+.winTop {
+    color: var(--brown);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+}
+
+.winBody {
+    color: var(--brown);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+/* The Close Button */
+body #winClose {
+    float: left;
+    color: var(--black);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#winClose:hover,
+#winClose:focus {
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body #winClose2 {
+    float: right;
+    color: var(--black);
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#winClose2:hover,
+#winClose2:focus {
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+}

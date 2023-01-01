@@ -2,12 +2,12 @@
 
 must use at least two server-side APIs [austin]✅
 must use a CSS framework other than bootstrap [bayan]
-must use client-side storage to store persistent data [bayan]
+must use client-side storage to store persistent data [Austin/Tom]✅
 must have a polished UI ✅
 must meet good quality coding standards (indentaion, scoping, naming, etc.) [tom]
 must NOT use alerts, confirms, or prompts (look into modals). ✅
-must be deployed to GitHub Pages [tom]
-must be interactive (i.e: accept and respond to user input) [all]
+must be deployed to GitHub Pages [tom]✅
+must be interactive (i.e: accept and respond to user input) [all]✅
 
 We will use a random word or phrase generator API and bring that into a pirate translator api to bring in something to guess for Walk the Plank! The user will be prompted with instructions on how to play the game. A random word or phrase will be generated, and the user has to press a letter on their keyboard to make a guess. If the guess is correct, it will populate into the proper spot in the word/phrase. If the guess is incorrect, the unlucky pirate will step closer to the edge of the plank, and the incorrect letter will enter the wrong letter bank on the screen. If the user guesses correctly, the pirate will jump happily in place. If the user wins he's saved. If the user guesses incorrectly for all guesses, the pirate falls off the plank and splats onto the name WALK THE PLANK
 be recorded on the ship.
