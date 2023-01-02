@@ -23,6 +23,7 @@ var loseTracker = 0
 var timeEl = document.getElementById("time")
 var datas = ''
 var timerInterval
+var timerStopper = false
 // Get the info modal
 var infoModal = document.getElementById("infoModal")
 // Get the button that opens the info modal
@@ -49,16 +50,34 @@ function init() {
 }
 
 function gameStart() {
+  document.getElementById('turnsLeftCounter').innerHTML = "Turns Left 7"
+  timeEl.innerHTML = "15 seconds left until loss of turn."
   turnsLeft = 7
   pirateOne.classList.remove('hidden')
   pirateOne.classList.add('visible')
+  pirateTwo.classList.add('hidden')
+  pirateTwo.classList.remove('visible')
+  pirateThree.classList.add('hidden')
+  pirateThree.classList.remove('visible')
+  pirateFour.classList.add('hidden')
+  pirateFour.classList.remove('visible')
+  pirateFive.classList.add('hidden')
+  pirateFive.classList.remove('visible')
+  pirateSix.classList.add('hidden')
+  pirateSix.classList.remove('visible')
+  pirateSeven.classList.add('hidden')
+  pirateSeven.classList.remove('visible')
   pirateLoss.classList.add('hidden')
   pirateLoss.classList.remove('visible')
+  timerStopper = true
   timer()
   start()
 }
 
 function timer() {
+  if (timerStopper = true) {
+    clearInterval(timerInterval)
+  }
   //fetch wins/losses
   startGame.disabled = true
 
@@ -66,13 +85,14 @@ function timer() {
   var secondsLeft = 15  // Change back to 15 before presentation
   timerInterval = setInterval(function () {
     secondsLeft--
-    timeEl.textContent = secondsLeft + " seconds left until loss of turn."
+    timeEl.innerHTML = secondsLeft + " seconds left until loss of turn."
 
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval)
       sweepSprite()
       if (turnsLeft > 0) {
+        timerStopper = true
         timer()
       }
       else {
@@ -182,7 +202,7 @@ function renderBlanks() {
 
 
 // Tests if guessed letter is in word and renders it to the screen.
-function checkLetters(letter) {
+function checkLetteletterrs(letter) {
   var letterInWord = false
   for (var i = 0; i < amtBlanks; i++) {
     if (fetched[i] === letter) {
@@ -202,6 +222,7 @@ function checkLetters(letter) {
   if (!letterInWord) {
     sweepSprite()
   }
+  timerStopper= true
   timer()
 }
 
@@ -344,6 +365,7 @@ function checkLetters(letter) {
   if (!letterInWord) {
     sweepSprite()
   }
+  timerStopper = true
   timer()
 }
 
