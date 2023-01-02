@@ -153,7 +153,7 @@ function getlosses() {
 function checkWin() {
    if (fetched === blanks.join("")) {
     winGame()
-}
+}}
 
 //////
 ////// turning the fetched array into useable blanks
@@ -361,5 +361,6 @@ fetch(requestUrl)
     renderBlanks()
   })
 }
+
 
 init()
