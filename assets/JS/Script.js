@@ -93,6 +93,7 @@ function checkWin() {
 //Opens the win modal if the checkWin succeeds, ups the wins counter, and enables the start game button.
 function winGame() {
   winModal.style.display = "block"
+  clearInterval(timerInterval)
   winTracker++
   startGame.disabled = false
   setWins()
@@ -101,6 +102,7 @@ function winGame() {
 //Opens the Play Again Modal if turnsLeft turns to 0, ups the losses counter, and enables the start game button
 function loseGame() {
   PAModal.style.display = "block"
+  clearInterval(timerInterval)
   loseTracker++
   startGame.disabled = false
   setLosses()
