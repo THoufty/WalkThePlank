@@ -149,6 +149,12 @@ function getlosses() {
   lose.textContent = loseTracker
 }
 
+
+function checkWin() {
+   if (fetched === blanks.join("")) {
+    winGame()
+}
+
 //////
 ////// turning the fetched array into useable blanks
 //////
@@ -314,6 +320,30 @@ document.addEventListener("keydown", function (event) {
     checkWin()
   }
 })
+
+// Tests if guessed letter is in word and renders it to the screen.
+function checkLetters(letter) {
+  var letterInWord = false
+  for (var i = 0; i < amtBlanks; i++) {
+    if (fetched[i] === letter) {
+      letterInWord = true
+    }
+  }
+  if (letterInWord) {
+    for (var j = 0; j < amtBlanks; j++) {
+      if (fetched[j] === letter) {
+        blanks[j] = letter
+      }
+    }
+    // replaces blanks with letters
+    wordBlank.innerHTML = blanks.join("&nbsp")
+    console.log(blanks.join(""))
+  }
+  if (!letterInWord) {
+    sweepSprite()
+  }
+  timer()
+}
 
 function start() {
 fetch(requestUrl)
