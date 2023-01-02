@@ -21,6 +21,7 @@ var win = document.querySelector(".win");
 var winTracker= 0
 var loseTracker = 0
 var Winner = false
+var datas = ''
 
 var timeEl = document.getElementById("time")
 // Get the info modal
@@ -64,13 +65,12 @@ function gameStart() {
 function winGame() {
   wordBlank.textContent = "YOU WON!!!🏆 ";
   winTracker++
-  startButton.disabled = false;
+  startGame.disabled = false;
   setWins()
 }
 
 // The loseGame function is called when timer reaches 0
 function loseGame() {
-  wordBlank.textContent = "GAME OVER";
   loseTracker++
   startButton.disabled = false;
   setLosses()
@@ -117,7 +117,7 @@ function checkWin() {
   // If the word equals the blankLetters array when converted to string, set isWin to true
   if (fetched === blanks.join("")) {
     // This value is used in the timer function to test if win condition is met
-    isWin = true;
+    Winner = true;
   }
 }
 
@@ -274,24 +274,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// Tests if guessed letter is in word and renders it to the screen.
-function checkLetters(letter) {
-  var letterInWord = false;
-  for (var i = 0; i < amtBlanks; i++) {
-    if (fetched[i] === letter) {
-      letterInWord = true;
-    }
-  }
-  if (letterInWord) {
-    for (var j = 0; j < amtBlanks; j++) {
-      if (fetched[j] === letter) {
-        blanks[j] = letter;
-      }
-    }
-    wordBlank.textContent = blanks.join(" ");
-  }
-}
-
 // document.addEventListener('keydown', function () {
 //   checkLetters()
 //   if 
@@ -322,7 +304,6 @@ function checkLetters(letter) {
 //   sweepSprite()
 // }}
 
-var datas = ''
 fetch(requestUrl)
   .then(function (response) {
     return response.json()
