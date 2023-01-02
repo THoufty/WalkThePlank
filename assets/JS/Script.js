@@ -63,7 +63,7 @@ function timer() {
   startGame.disabled = true
 
   // Sets interval in variable
-  var secondsLeft = 3  // Change back to 15 before presentation
+  var secondsLeft = 15  // Change back to 15 before presentation
   timerInterval = setInterval(function () {
     secondsLeft--
     timeEl.textContent = secondsLeft + " seconds left until loss of turn."
@@ -191,12 +191,10 @@ function checkLetters(letter) {
     wordBlank.innerHTML = blanks.join("&nbsp")
     console.log(blanks.join(""))
   }
-  if (letterInWord) {
-    timer()
-  }
   if (!letterInWord) {
     sweepSprite()
   }
+  timer()
 }
 
 //sweeps the sprite html and changes sprite location based on turnsLeft value and countdowns turnsLeft value
@@ -311,6 +309,7 @@ document.addEventListener("keydown", function (event) {
   // Test if key pushed is letter
   if (alphabetNumericCharacters.includes(key)) {
     var letterGuessed = event.key
+    clearInterval(timerInterval)
     checkLetters(letterGuessed)
     checkWin()
   }
