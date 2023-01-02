@@ -238,7 +238,7 @@ body #winClose2 {
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
-}
+} 
 
 #winClose2:hover,
 #winClose2:focus {

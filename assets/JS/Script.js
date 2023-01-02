@@ -1,4 +1,4 @@
-var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
+var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=20&api_key=xVnLMxZTVVNHCfilqpljlAeF'
 var startGame = document.getElementById("fetch-button")
 var usefulBtn = document.getElementById("UsefulButton")
 var turnsLeft
@@ -41,7 +41,7 @@ var winModal = document.getElementById("winModal")
 var winSpanPlayAgain = document.getElementById("winClose2")
 // Get the <span> element that closes the win modal and restarts the game
 var winSpanGoBack = document.getElementById("winClose")
-
+ 
 function init() {
   getWins()
   getlosses()
@@ -168,11 +168,11 @@ function renderBlanks() {
   blanks = []
   // Uses loop to push blanks to lettersForBlanks array
   for (var i = 0; i < amtBlanks; i++) {
-    if (lettersForBlanks[i] != " ") {
+    if (lettersForBlanks[i] != " " && lettersForBlanks[i] != "'") {
       blanks.push("_")
     }
     else {
-      blanks.push(" ")
+      blanks.push(lettersForBlanks[i])
     }
   }
   // adds spaces between seperate blanks and letters.
@@ -313,7 +313,7 @@ startGame.addEventListener('click', gameStart)
 
 document.addEventListener("keydown", function (event) {
   var key = event.key.toLowerCase()
-  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz-' ".split("")
+  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz- ".split("")
   // Test if key pushed is letter
   if (alphabetNumericCharacters.includes(key)) {
     var letterGuessed = event.key
@@ -354,7 +354,7 @@ fetch(requestUrl)
   })
   .then(function (data) {
     console.log(data)
-    datas = data.contents.names.join(' ')
+    datas = data.contents.names[Math.floor(Math.random() * data.contents.names.length)]
     fetched = datas.toLowerCase()
     console.log(fetched)
 
