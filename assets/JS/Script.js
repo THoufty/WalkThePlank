@@ -1,7 +1,7 @@
 var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=1&api_key=xVnLMxZTVVNHCfilqpljlAeF'
 var startGame = document.getElementById("fetch-button")
 var usefulBtn = document.getElementById("UsefulButton")
-var turnsLeft;
+var turnsLeft
 var fetched = ''
 var blanks = []
 var lettersForBlanks = []
@@ -20,7 +20,6 @@ var lose = document.querySelector(".lose")
 var win = document.querySelector(".win")
 var winTracker = 0
 var loseTracker = 0
-var Winner = false
 var timeEl = document.getElementById("time")
 var datas = ''
 var timerInterval
@@ -46,6 +45,7 @@ var winSpanGoBack = document.getElementById("winClose")
 function init() {
   getWins()
   getlosses()
+  start()
 }
 
 function gameStart() {
@@ -55,6 +55,7 @@ function gameStart() {
   pirateLoss.classList.add('hidden')
   pirateLoss.classList.remove('visible')
   timer()
+  start()
 }
 
 function timer() {
@@ -64,7 +65,6 @@ function timer() {
   // Sets interval in variable
   var secondsLeft = 3  // Change back to 15 before presentation
   timerInterval = setInterval(function () {
-
     secondsLeft--
     timeEl.textContent = secondsLeft + " seconds left until loss of turn."
 
@@ -75,18 +75,22 @@ function timer() {
       if (turnsLeft > 0) {
         timer()
       }
+      else {
+        return
+      }
     }
 
   }, 1000)
 }
 
-// If the word equals the blankLetters array when converted to string, set Winner to true
+// Checks the board and, if all blanks are filled, fires the winGame function.
 function checkWin() {
   if (fetched === blanks.join("")) {
-    Winner = true
+    winGame()
   }
 }
-//Opens the win modal if winner = true, ups the wins counter, and enables the start game button.
+
+//Opens the win modal if the checkWin succeeds, ups the wins counter, and enables the start game button.
 function winGame() {
   winModal.style.display = "block"
   winTracker++
@@ -96,13 +100,15 @@ function winGame() {
 
 //Opens the Play Again Modal if turnsLeft turns to 0, ups the losses counter, and enables the start game button
 function loseGame() {
-  if (turnsLeft == 0) {
-    PAModal.style.display = "block"
-  }
+  PAModal.style.display = "block"
   loseTracker++
   startGame.disabled = false
   setLosses()
 }
+
+//////
+////// setting wins/losses to local storage
+//////
 
 // Updates win count on screen and sets win count to local storage
 function setWins() {
@@ -117,7 +123,7 @@ function setLosses() {
 }
 
 //////
-//////  Fetching from Local Storage
+//////  Fetching wins/losses from Local Storage
 //////
 
 // fetches win count from local storage, if it exists
@@ -143,6 +149,9 @@ function getlosses() {
   lose.textContent = loseTracker
 }
 
+//////
+////// turning the fetched array into useable blanks
+//////
 
 function renderBlanks() {
   // turns joined fetch string into an array of letters
@@ -158,7 +167,7 @@ function renderBlanks() {
       blanks.push(" ")
     }
   }
-  // adds blanks between seperate words.
+  // adds spaces between seperate blanks and letters.
   wordBlank.innerHTML = blanks.join("&nbsp")
 }
 
@@ -178,10 +187,14 @@ function checkLetters(letter) {
         blanks[j] = letter
       }
     }
-    wordBlank.textContent = blanks.join(" ")
-    console.log(blanks.join(" "))
+    // replaces blanks with letters
+    wordBlank.innerHTML = blanks.join("&nbsp")
+    console.log(blanks.join(""))
   }
-  if (letterInWord = false) {
+  if (letterInWord) {
+    timer()
+  }
+  if (!letterInWord) {
     sweepSprite()
   }
 }
@@ -301,21 +314,23 @@ document.addEventListener("keydown", function (event) {
     checkLetters(letterGuessed)
     checkWin()
   }
-});
+})
 
+function start() {
 fetch(requestUrl)
   .then(function (response) {
     return response.json()
   })
   .then(function (data) {
+    console.log(data)
     datas = data.contents.names.join(' ')
     fetched = datas.toLowerCase()
-    console.log(data.contents.names)
+    console.log(fetched)
 
     // whatever is going to be using this needs to be called from in here
     // use "fetched"
     renderBlanks()
-
-  });
+  })
+}
 
 init()

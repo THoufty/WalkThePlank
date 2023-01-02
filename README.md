@@ -4,7 +4,7 @@ must use at least two server-side APIs [austin]✅
 must use a CSS framework other than bootstrap [bayan]
 must use client-side storage to store persistent data [Austin/Tom]✅
 must have a polished UI ✅
-must meet good quality coding standards (indentaion, scoping, naming, etc.) [tom]
+must meet good quality coding standards (indentaion, scoping, naming, etc.) [tom]✅
 must NOT use alerts, confirms, or prompts (look into modals). ✅
 must be deployed to GitHub Pages [tom]✅
 must be interactive (i.e: accept and respond to user input) [all]✅
