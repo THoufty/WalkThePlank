@@ -49,9 +49,23 @@ function init() {
 }
 
 function gameStart() {
+  document.getElementById('turnsLeftCounter').innerHTML = "Turns Left 7"
+  timeEl.innerHTML = "15 seconds left until loss of turn."
   turnsLeft = 7
   pirateOne.classList.remove('hidden')
   pirateOne.classList.add('visible')
+  pirateTwo.classList.add('hidden')
+  pirateTwo.classList.remove('visible')
+  pirateThree.classList.add('hidden')
+  pirateThree.classList.remove('visible')
+  pirateFour.classList.add('hidden')
+  pirateFour.classList.remove('visible')
+  pirateFive.classList.add('hidden')
+  pirateFive.classList.remove('visible')
+  pirateSix.classList.add('hidden')
+  pirateSix.classList.remove('visible')
+  pirateSeven.classList.add('hidden')
+  pirateSeven.classList.remove('visible')
   pirateLoss.classList.add('hidden')
   pirateLoss.classList.remove('visible')
   timer()
