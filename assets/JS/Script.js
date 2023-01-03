@@ -292,7 +292,10 @@ function sweepSprite() {
 // When the user clicks on <span>, close the modal
 PASpanGoBack.addEventListener('click', function () {
   PAModal.style.display = "none"
+  clearInterval(timerInterval)
+  startGame.disabled = false
 })
+
 // When the user clicks on <span>, close the modal and 'start game' is initiated
 PASpanPlayAgain.addEventListener('click', function () {
   PAModal.style.display = "none"
@@ -307,6 +310,7 @@ PASpanPlayAgain.addEventListener('click', function () {
 // When the user clicks on <span>, close the modal
 winSpanGoBack.addEventListener('click', function () {
   winModal.style.display = "none"
+  clearInterval(timerInterval)
 })
 // When the user clicks on <span>, close the modal and 'start game' is initiated
 winSpanPlayAgain.addEventListener('click', function () {
