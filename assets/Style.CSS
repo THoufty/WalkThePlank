@@ -133,6 +133,8 @@
    */
   
   h1 {
+    padding-top: 3em;
+    padding-left: 1em;
     font-size: 2em;
     margin: 0.67em 0;
   }

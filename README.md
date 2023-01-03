@@ -1,68 +1,49 @@
-# WalkThePlank
+# Walk The Plank
 
-must use at least two server-side APIs [austin]✅
-must use a CSS framework other than bootstrap [bayan]
-must use client-side storage to store persistent data [Austin/Tom]✅
-must have a polished UI 
-must meet good quality coding standards (indentaion, scoping, naming, etc.) [tom]✅
-must NOT use alerts, confirms, or prompts (look into modals). ✅
-must be deployed to GitHub Pages [tom]✅
-must be interactive (i.e: accept and respond to user input) [all]✅
+## Description
 
-We will use a random word or phrase generator API and bring that into a pirate translator api to bring in something to guess for Walk the Plank! The user will be prompted with instructions on how to play the game. A random word or phrase will be generated, and the user has to press a letter on their keyboard to make a guess. If the guess is correct, it will populate into the proper spot in the word/phrase. If the guess is incorrect, the unlucky pirate will step closer to the edge of the plank, and the incorrect letter will enter the wrong letter bank on the screen. If the user guesses correctly, the pirate will jump happily in place. If the user wins he's saved. If the user guesses incorrectly for all guesses, the pirate falls off the plank and splats onto the name WALK THE PLANK
-be recorded on the ship.
+Our project is a pirate themed hangman game. We chose this design because we thought it would be a good way to test and show off our skills with JS and CSS.
 
- 
-Group: Bayan, Austin, Tom
-Scallywags
+## Usage
 
-Tom's #: 614-580-9451
-Tom's Email: Thomasjhouf@gmail.com
+Upon load, the page will give you a battery of blanks, a 'start game' button and a clickable information infographic.
 
-Project Type: Game
-Game Type: Hangman
-Game Brand: Pirates
-Game Name: Walk The Plank
-Code Utilizations:
-- HTML & CSS need coded  [Bayan]
-   positions for pirate on plank needed in multiple CSS boxes under different HTML tags. (CSS)
-   boxes for wrong letters and ⏰. (CSS)
-   info button for instructions. (CSS)✅
+Click the 'start game' button to start the timer and guess letters by clicking different letters on your keyboard. 
 
-- create infographics for 'how to play' page icon and pirate sprite.
+Click the information infographic to the right to open a modal of instructions on how to play the game.
 
-- clickable information button for instructions [Tom]
-   modal with instructions for how to play ✅
+```md
+[alt text](./assets/images/dead%20pirate.png)
+```
 
-- Calls pirate generator API (JS) [Austin]✅
-   API links needed (JS)✅
+## Credits
 
-<!-- - Calls pirate translator API (JS) [Austin] -->
+List your collaborators, if any, with links to their GitHub profiles.
 
-- Uses timer for round countdown (insert clock emoji same as wrong letter)⏰
-   04-01-09 & 10
+If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-- Uses local storage for wins/losses
-   04-01-(21-26)
+If you followed tutorials, include links to those here as well.
 
-- Uses JS to move pirate sprite along the plank [tom]
-   04-01-20??
+## License
 
-- Uses pop-up modal for "play again?" screen [Tom]
+The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
-- Keyboard events for letter selection [austin]
-   04-01-16   
-   04-01-20
+---
 
-- Web API's mini project: Word Guess/ 
-   wins/losses
-   Fillable character spots
-   keydown evens for choosing letters
+🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 
+## Badges
 
-notes for ross help
-line 145 needs to call line 36 as if clocked and close modal
+![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
-line 139 needs to close modal
+Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
-keydown needs to trigger a click as if clicking the useful button
+## Features
+
+If your project has a lot of features, list them here.
+
+## How to Contribute
+
+If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+
+## Tests
