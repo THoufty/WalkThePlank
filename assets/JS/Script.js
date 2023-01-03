@@ -144,6 +144,7 @@ function setLosses() {
   localStorage.setItem("loseTrack", loseTracker)
 }
 
+
 //////
 //////  Fetching wins/losses from Local Storage
 //////
