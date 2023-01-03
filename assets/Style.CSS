@@ -133,11 +133,12 @@
    */
   
   h1 {
-    padding-top: 3em;
-    padding-left: 1em;
+    padding-top: 6em;
+    padding-left: 8em;
     font-size: 2em;
     margin: 0.67em 0;
     font-family: comic sans MS;
+    color: burlywood
   }
   
   /**
@@ -582,28 +583,37 @@ body #PAClose2 {
 }
 
 #pirate1 {
+  position: absolute;
     padding-left: 20em;
 }
 #pirate2 {
+  position: absolute;
     padding-left: 19em;
 }
 #pirate3 {
+  position: absolute;
     padding-left: 18em;
 }
 #pirate4 {
+  position: absolute;
     padding-left: 17em;
 }
 #pirate5 {
+  position: absolute;
     padding-left: 16em;
 }
 #pirate6 {
+  position: absolute;
     padding-left: 15em;
 }
 #pirate7 {
+  position: absolute;
     padding-left: 14em;
 }
 #pirateLoss {
+  position: absolute;
     padding-left: 13em;
+    padding-top: 30em
 }
 
 .genb {
