@@ -11,23 +11,7 @@
 
 <body>
 
-    <h1>WALK THE PLANK</h1>
     <h2></h2>
-
-    <div>
-        <div id="pirate1" class="sprite visible"><img src="./assets/images/pirate on plank.png" alt="A little pirate man">
-        </div>
-        <div id="pirate2" class="sprite hidden"><img src="./assets/images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirate3" class="sprite hidden"><img src="./assets/images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirate4" class="sprite hidden"><img src="./assets/images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirate5" class="sprite hidden"><img src="./assets/images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirate6" class="sprite hidden"><img src="./assets/images/pirate on plank.png" alt="A little pirate man">
-        </div>
-        <div id="pirate7" class="sprite hidden"><img src="./assets/images/pirate on plank.png" alt="A little pirate man"></div>
-        <div id="pirateLoss" class="sprite hidden"><img src="./assets/images/splat.png" alt="A little pirate man"></div>
-        <div id="pirateWin" class="sprite hidden"><img src="./assets/images/evil pirate.png" alt="A little pirate man"></div>
-    </div>
-
 
 
 
@@ -43,8 +27,9 @@
             <span class="infoTop">How To Play</span>
             <div class="infoBody">
                 <p> 💀To play the game you will need to guess the words on screen one letter at a time!</p>
-                <p> 💀When you guess a letter correctly, it will appear in one or more of the blank spaces!</p>
-                <p> 💀When you guess a letter incorrectly, it will apear in the side of the ship as a missed letter!</p>
+                <p> 💀When you guess a letter correctly, it will appear in one or more of the blank spaces!!</p>
+                <p> 💀When you guess a letter incorrectly, your character will move one step closer to his watery
+                    demise!!!</p>
             </div>
             <span class="infoClose"> Back to Game</span>
         </div>
@@ -71,20 +56,20 @@
         </div>
     </div>
 
-        <!-- The Play Again Modal -->
-        <div id="winModal" class="winModal">
+    <!-- The Play Again Modal -->
+    <div id="winModal" class="winModal">
 
-            <!-- Modal content -->
-            <div class="winModal-content">
-                <span class="winTop">YAR!!</span>
-    
-                <div class="winBody">
-                     <p>YOU 🏆 WON</p>
-                </div>
-                <span id="winClose2">Play Again?</span>
-                <span id="winClose">Go Back</span>
+        <!-- Modal content -->
+        <div class="winModal-content">
+            <span class="winTop">YAR!!</span>
+
+            <div class="winBody">
+                <p>YOU 🏆 WON</p>
             </div>
+            <span id="winClose2">Play Again?</span>
+            <span id="winClose">Go Back</span>
         </div>
+    </div>
 
     <div class="genb">
         <button id="fetch-button">Start Game</button>
@@ -94,17 +79,43 @@
     <div id="time" style="text-align:center;">
         <div id="main"></div>
     </div>
-        
-    <div class="large-font word-blanks"></div>
+
 
 
     <div class="WorL">
-        <div class = "WorL-Box">
-        <div>
-        <h2>Wins: <span class="win">0 </span> </h2>
-        <h2>Losses: <span class="lose">0</span></h2>
-      </div>
+        <div class="WorL-Box">
+            <div>
+                <h2>Wins: <span class="win">0 </span> </h2>
+                <h2>Losses: <span class="lose">0</span></h2>
+            </div>
+        </div>
+    </div>
 
+    <div>
+        <div id="pirate1" class="sprite visible"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man">
+        </div>
+        <div id="pirate2" class="sprite hidden"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man"></div>
+        <div id="pirate3" class="sprite hidden"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man"></div>
+        <div id="pirate4" class="sprite hidden"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man"></div>
+        <div id="pirate5" class="sprite hidden"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man"></div>
+        <div id="pirate6" class="sprite hidden"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man">
+        </div>
+        <div id="pirate7" class="sprite hidden"><img src="./assets/images/pirate on plank.png"
+                alt="A little pirate man"></div>
+        <div id="pirateLoss" class="sprite hidden"><img src="./assets/images/splat.png" alt="A little pirate man"></div>
+        <div id="pirateWin" class="sprite hidden"><img src="./assets/images/evil pirate.png" alt="A little pirate man">
+        </div>
+    </div>
+
+    <div class="large-font word-blanks"></div>
+
+    <h1>WALK THE PLANK</h1>
 </body>
 <script src="./assets/JS/Script.js"></script>
 
