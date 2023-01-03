@@ -7,7 +7,7 @@
  */
 
  html {
-    font-family: sans-serif; /* 1 */
+    font-family: comic sans MS; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
   }
@@ -133,8 +133,11 @@
    */
   
   h1 {
+    padding-top: 3em;
+    padding-left: 1em;
     font-size: 2em;
     margin: 0.67em 0;
+    font-family: comic sans MS;
   }
   
   /**
@@ -230,7 +233,7 @@
   kbd,
   pre,
   samp {
-    font-family: monospace, monospace;
+    font-family: comic sans MS, monospace, monospace;
     font-size: 1em;
   }
   
@@ -434,7 +437,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Comic sans MS, Arial, Helvetica, sans-serif;
     background-image: url('./images/ocean.jpg');
     background-size: cover;
 }
@@ -482,13 +485,13 @@ body {
 .infoTop {
     color: var(--brown);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic san MS, 'Courier New', Courier, monospace;
     font-size: 30px;
 }
 
 .infoBody {
     color: var(--brown);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 15px;
     font-weight: bolder;
 }
@@ -536,14 +539,14 @@ body .infoClose {
 .PATop {
     color: var(--brown);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 35px;
 }
 
 .PABody {
     color: var(--brown);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 25px;
 }
 
@@ -552,7 +555,7 @@ body #PAClose {
     float: left;
     color: var(--black);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 15px;
 }
 
@@ -567,7 +570,7 @@ body #PAClose2 {
     float: right;
     color: var(--black);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 15px;
 }
 
@@ -634,14 +637,14 @@ body #PAClose2 {
 .winTop {
     color: var(--brown);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 35px;
 }
 
 .winBody {
     color: var(--brown);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 25px;
 }
 
@@ -650,7 +653,7 @@ body #winClose {
     float: left;
     color: var(--black);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 15px;
 }
 
@@ -665,7 +668,7 @@ body #winClose2 {
     float: right;
     color: var(--black);
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: comic sans MS, 'Courier New', Courier, monospace;
     font-size: 15px;
 } 
 
@@ -675,3 +678,5 @@ body #winClose2 {
     text-decoration: none;
     cursor: pointer;
 }
+
+h1 
