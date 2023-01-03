@@ -430,6 +430,7 @@
     padding: 0;
   }
   
+
 /* Z axis makes things more important on the page. higher number meand closer to you. */
 
 :root {
@@ -438,7 +439,7 @@
 }
 
 body {
-    font-family: Comic sans MS, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-image: url('./images/ocean.jpg');
     background-size: cover;
 }
@@ -486,13 +487,13 @@ body {
 .infoTop {
     color: var(--brown);
     font-weight: bolder;
-    font-family: comic san MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
 }
 
 .infoBody {
     color: var(--brown);
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     font-weight: bolder;
 }
@@ -540,14 +541,14 @@ body .infoClose {
 .PATop {
     color: var(--brown);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 35px;
 }
 
 .PABody {
     color: var(--brown);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
 }
 
@@ -556,7 +557,7 @@ body #PAClose {
     float: left;
     color: var(--black);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
 }
 
@@ -571,7 +572,7 @@ body #PAClose2 {
     float: right;
     color: var(--black);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
 }
 
@@ -647,14 +648,14 @@ body #PAClose2 {
 .winTop {
     color: var(--brown);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 35px;
 }
 
 .winBody {
     color: var(--brown);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
 }
 
@@ -663,7 +664,7 @@ body #winClose {
     float: left;
     color: var(--black);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
 }
 
@@ -678,7 +679,7 @@ body #winClose2 {
     float: right;
     color: var(--black);
     font-weight: bolder;
-    font-family: comic sans MS, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
 } 
 
@@ -688,5 +689,3 @@ body #winClose2 {
     text-decoration: none;
     cursor: pointer;
 }
-
-h1 
