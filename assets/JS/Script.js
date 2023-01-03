@@ -1,4 +1,4 @@
-var requestUrl = 'http://api.fungenerators.com/pirate/generate/name?variation=male&limit=20&api_key=xVnLMxZTVVNHCfilqpljlAeF'
+var requestUrl = 'https://api.fungenerators.com/pirate/generate/name?variation=male&limit=20&api_key=xVnLMxZTVVNHCfilqpljlAeF'
 var startGame = document.getElementById("fetch-button")
 var usefulBtn = document.getElementById("UsefulButton")
 var turnsLeft
